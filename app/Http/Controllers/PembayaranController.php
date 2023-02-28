@@ -5,6 +5,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EmployeeExport;
 use Illuminate\Http\Request;
 use App\Models\Pembayaran;
+use App\Models\Siswa;
 use App\Models\User;
 use App\Models\spp;
 class PembayaranController extends Controller
@@ -30,9 +31,10 @@ class PembayaranController extends Controller
      */
     public function create()
     {   
+        $siswa = Siswa::all();
         $petugas = User::all();
         $spp = spp::all();
-        return view('pembayaran.create', compact('petugas','spp'));
+        return view('pembayaran.create', compact('siswa','petugas','spp'));
      }
 
     /**

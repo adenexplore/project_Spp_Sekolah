@@ -63,7 +63,15 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nisn</strong>
-                    <input class="form-control" type="number" name="nisn" placeholder="Isi Nisn">          
+                {{-- <input class="form-control" type="number" name="id_spp" placeholder="Isi id spp">           --}}
+                <select name="nisn" id="" class="form-control">
+                    <option selected >pilih Nisn Siswa</option>
+                    @foreach($siswa as $row)
+                        <option {{ $row->nisn == old('nisn') ? 'selected' : '' }} value="{{$row->nisn}}">
+                        {{ $row->nisn}}
+                        </option>
+                    @endforeach
+                </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -101,7 +109,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Jumlah Bayar</strong>
-                    <input class="form-control" type="number" name="jumlah_bayar" placeholder="Isi jumlah Bayar">          
+                    <input class="form-control" type="text" name="jumlah_bayar" placeholder="Isi jumlah Bayar">          
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

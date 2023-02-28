@@ -21,7 +21,7 @@ class CreatePembayaranTable extends Migration
             $table->string('bulan_dibayar');
             $table->string('tahun_dibayar');
             $table->string('id_spp');
-            $table->integer('jumlah_bayar');
+            $table->string('jumlah_bayar');
 
             $table->timestamps();
         });
