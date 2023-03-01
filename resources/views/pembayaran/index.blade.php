@@ -27,7 +27,6 @@
             <hr>
             <div class="pull-right" style="float: right;">
                 <a class="btn btn-success" href="{{ route('pembayaran.create') }}">Tambah Pembayaran  <i class="fa-sharp fa-solid fa-add"></i></a>
-                {{-- <a class="btn btn-success" href="{{ route('users.export') }}"> Export</a> --}}
             </div>
             {{-- <div class="pull-right" style="float: left;">
                 <a class="btn btn-success" href="/exportexcel">Export  <i class="fa-sharp fa-solid fa-file-export"></i></a>

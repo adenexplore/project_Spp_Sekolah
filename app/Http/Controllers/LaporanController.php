@@ -82,4 +82,9 @@ class LaporanController extends Controller
     {
         //
     }
+    public function struk() 
+    {
+        $laporans = Pembayaran::orderBy('created_at', 'desc')->get();
+        return view('laporan.struk', compact('laporans'));
+    }
 }

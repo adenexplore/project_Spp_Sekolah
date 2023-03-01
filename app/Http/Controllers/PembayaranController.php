@@ -117,13 +117,19 @@ class PembayaranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($pembayaran)
     {
-        //
+        $pembayaranid = Pembayaran::find($pembayaran);
+        $pembayaranid->delete();
+
+        return redirect()->route('pembayaran.index')
+            ->with('success', 'Berhasil Hapus !');
     }
 
     public function exportexcel()
     {
       return Excel::download(new EmployeeExport, 'pembayaran.xlsx');
     }
+
+   
 }

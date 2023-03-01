@@ -27,7 +27,6 @@
             <hr>
             <div class="pull-right" style="float: left;">
                 <a class="btn btn-success" href="/exportexcel">Export  <i class="fa-sharp fa-solid fa-file-export"></i></a>
-                {{-- <a class="btn btn-success" href="{{ route('users.export') }}"> Export</a> --}}
             </div>
         </div>
     </div>
@@ -55,7 +54,7 @@
                             <th>Tahun Dibayar</th>
                             <th>Id Spp</th>
                             <th>Jumlah Bayar</th>
-                            {{-- <th width="112px">Action</th> --}}
+                            <th width="112px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,8 +68,11 @@
                                 <td>{{ $laporan->tahun_dibayar }}</td>
                                 <td>{{ $laporan->id_spp }}</td>
                                 <td>{{ $laporan->jumlah_bayar }}</td>
-                                {{-- <td>
-                                    <form action="{{ route('laporan.destroy',$laporan->id) }}" method="POST">
+                                <td>
+                                    <a class="btn btn-primary" href="/struk">
+                                        <i class="fa-solid fa-file-invoice"> </i>
+                                    </a>
+                                    {{-- <form action="{{ route('laporan.destroy',$laporan->id) }}" method="POST">
                                         <a class="btn btn-primary" href="{{ route('laporan.edit',$laporan->id) }}">
                                             <i class="fa-solid fa-pen"> </i>
                                         </a>
@@ -79,8 +81,8 @@
                                         <button type="submit" class="btn btn-danger">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </button>
-                                    </form>
-                                </td> --}}
+                                    </form> --}}
+                                </td>
                             </tr>
                         @endforeach
                     </tbody> 

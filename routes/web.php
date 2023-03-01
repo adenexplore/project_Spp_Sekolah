@@ -39,6 +39,7 @@ Route::resource('pembayaran', PembayaranController::class);
 Route::resource('histori', HistoriController::class);
 
 Route::get('/exportexcel', [PembayaranController::class, 'exportexcel'])->name('exportexcel');
+Route::get('/struk', [LaporanController::class, 'struk'])->name('struk');
 
 // Auth::routes();
 // route untuk logout
