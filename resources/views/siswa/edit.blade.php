@@ -83,10 +83,10 @@
             <div class="form-group">
                 <strong>Id Spp</strong>
                 {{-- <input class="form-control" type="number" name="id_spp" placeholder="Isi id spp">           --}}
-                <select name="id_spp" id="" class="form-control">
-                    <option selected >pilih kelas</option>
+                <select name="id_spp" id="" class="form-control" >
+                    <option selected >{{$siswa->id_spp}}</option>
                     @foreach($spp as $row)
-                        <option {{ $row->id == old('id_spp', $siswa->id_spp)  ? 'selected' : '' }} value="{{$row->id}}">
+                        <option {{ $row->nominal == old('id_spp', $siswa->nominal)  ? 'selected' : '' }} value="{{$row->nominal}}">
                         {{ $row->nominal}}
                         </option>
                     @endforeach
@@ -97,9 +97,9 @@
             <div class="form-group">
                 <strong>Kelas </strong>
                 <select name="id_kelas" id="" class="form-control">
-                    <option selected >pilih kelas</option>
+                    <option selected >{{$siswa->id_kelas}}</option>
                     @foreach($kelas as $row)
-                        <option {{ $row->id == old('id_kelas',$siswa->id_kelas) ? 'selected' : '' }} value="{{$row->id}}">
+                        <option {{ $row->id_kelas == old('id_kelas',$siswa->id_kelas) ? 'selected' : '' }} value="{{$row->nama_kelas}}">
                         {{ $row->nama_kelas }}
                         </option>
                     @endforeach

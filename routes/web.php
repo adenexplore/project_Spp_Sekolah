@@ -38,8 +38,9 @@ Route::resource('laporan', LaporanController::class);
 Route::resource('pembayaran', PembayaranController::class);
 Route::resource('histori', HistoriController::class);
 
-Route::get('/exportexcel', [PembayaranController::class, 'exportexcel'])->name('exportexcel');
-Route::get('/struk', [LaporanController::class, 'struk'])->name('struk');
+Route::get('/exportexcel', [PembayaranController::class, 'exportexcel'])->middleware(['auth'])->name('exportexcel');
+Route::get('/struk', [LaporanController::class, 'struk'])->middleware(['auth'])->name('struk');
+Route::post('/siswa/import_excel', 'SiswaController@import_excel');
 
 // Auth::routes();
 // route untuk logout

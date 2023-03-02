@@ -57,8 +57,8 @@
                         @foreach ($users as $user)
                             <tr>
                                 <td>{{ ++$i }}</td>
-                                <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
+                                <td>{{ $user->name }}</td>
                                 <td>{{ $user->role }}</td>
                                 <td>
                                     <form action="{{ route('petugas.destroy',$user->id) }}" method="POST">

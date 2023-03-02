@@ -65,7 +65,7 @@
                     <option value=""> -- Pilih nominal-- </option>
                     <option value="100.000.00"@if ($spp->nominal == '100.000.00') selected @endif>100.000.00</option>
                     <option value="200.000.00"@if ($spp->nominal == '200.000.00') selected @endif>200.000.00</option>
-                    <option value="300.000.00 "@if ($spp->nominal == '300.000.00 ') selected @endif>300.000.00</option>
+                    <option value="300.000.00 "@if ($spp->nominal == '300.000.00') selected @endif>300.000.00</option>
                 </select>
             </div>
         </div>

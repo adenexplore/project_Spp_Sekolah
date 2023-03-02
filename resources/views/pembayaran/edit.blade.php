@@ -88,9 +88,9 @@
                 <strong>Id Spp</strong>
                 {{-- <input class="form-control" type="number" name="id_spp" placeholder="Isi id spp">           --}}
                 <select name="id_spp" id="" class="form-control">
-                    <option selected >pilih kelas</option>
+                    <option selected >{{$pembayaran->id_spp}}</option>
                     @foreach($spp as $row)
-                        <option {{ $row->id == old('id_spp', $pembayaran->id_spp)  ? 'selected' : '' }} value="{{$row->id}}">
+                        <option {{ $row->id_spp == old('id_spp', $pembayaran->id_spp)  ? 'selected' : '' }} value="{{$row->nominal}}">
                         {{ $row->nominal}}
                         </option>
                     @endforeach

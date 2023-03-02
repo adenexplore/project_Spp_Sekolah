@@ -53,7 +53,7 @@
                     <select name="id_petugas" id="" class="form-control">
                         <option selected>pilih Petugas</option>
                         @foreach($petugas as $row)
-                        <option {{ $row->id == old('id_petugas') ? 'selected' : '' }} value="{{$row->id}}">
+                        <option {{ $row->name == old('id_petugas') ? 'selected' : '' }} value="{{$row->name}}">
                         {{ $row->name }}
                         </option>
                         @endforeach
@@ -89,7 +89,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Tahun Bayar</strong>
-                    <input class="form-control" type="text" name="tahun_dibayar" placeholder="Isi tahun">          
+                    <input class="form-control" type="text" name="tahun_dibayar" placeholder="Isi tahun" >          
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -99,11 +99,17 @@
                 <select name="id_spp" id="" class="form-control">
                     <option selected >pilih Spp</option>
                     @foreach($spp as $row)
-                        <option {{ $row->id == old('id_spp') ? 'selected' : '' }} value="{{$row->id}}">
+                        <option {{ $row->nominal == old('id_spp') ? 'selected' : '' }} value="{{$row->nominal}}">
                         {{ $row->nominal}}
                         </option>
                     @endforeach
                 </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Tunggakan</strong>
+                    <input class="form-control" type="text" name="tunggakan" placeholder="Isi tunggakan" >          
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

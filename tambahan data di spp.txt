@@ -1,0 +1,8 @@
+1.ketika tahun nya di klik sesuai angkatan otomatis nominal spp keluar
+
+2.tunggakan pada pembayaran
+
+3.export pake filter sesuai kelas
+
+4.import excel ke dalam aplikasinya.
+

@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Siswa;
 use App\Models\Kelas;
 use App\Models\spp;
+use App\Imports\SiswaImport;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Session;
 
 
 class SiswaController extends Controller
@@ -24,18 +27,47 @@ class SiswaController extends Controller
             ->with('i', (request()->input('siswa', 1) - 1) * 5);
     }
 
+    public function import_excel(Request $request)
+    {
+        // validasi
+		$this->validate($request, [
+			'file' => 'required|mimes:csv,xls,xlsx'
+		]);
+ 
+		// menangkap file excel
+		$file = $request->file('file');
+ 
+		// membuat nama file unik
+		$nama_file = rand().$file->getClientOriginalName();
+ 
+		// upload ke folder file_siswa di dalam folder public
+		$file->move('file_siswa',$nama_file);
+ 
+		// import data
+		Excel::import(new SiswaImport, public_path('/file_siswa/'.$nama_file));
+ 
+		// notifikasi dengan session
+		Session::flash('sukses','Data Siswa Berhasil Diimport!');
+ 
+		// alihkan halaman kembali
+		return redirect('/siswa');
+     
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {  
+       $tahun = Spp::all();
        $kelas = Kelas::all();
        $spp = spp::all();
-       return view('siswa.create', compact('kelas','spp'));
+       return view('siswa.create', compact('tahun','kelas','spp'));
     }
-
+ 
     /**
      * Store a newly created resource in storage.
      *
@@ -52,6 +84,7 @@ class SiswaController extends Controller
             'nama' => 'required',
             'alamat' => 'required',
             'no_telp' => 'required',
+            'tahun' => 'required',
             'id_spp' => 'required',
             'id_kelas' => 'required',
         ]);

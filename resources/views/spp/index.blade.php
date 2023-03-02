@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Data SPP</h2>
+                <h2>Data Spp</h2>
             </div>
             <hr>
             <div class="pull-right" style="float: right;">
